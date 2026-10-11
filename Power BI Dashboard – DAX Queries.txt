@@ -1,0 +1,35 @@
+                                               Power BI Dashboard – DAX Queries
+ 1. Profit Measures
+
+
+Min of Profit = MIN(Sheet1[Sales])
+
+Max of Profit = MAX(Sheet1[Sales])
+
+Sum of Profit = SUM(Sheet1[Sales])
+
+ 2. Date Table
+
+
+DateTable =
+CALENDAR(
+    MIN(Sheet1[Date]),
+    MAX(Sheet1[Date])
+)
+
+ 3. Date Table Calculated Columns
+
+
+Quarter = "Q" & FORMAT(DateTable[Date], "Q")
+
+Month Name = FORMAT(DateTable[Date], "MMM")
+
+Month = MONTH(DateTable[Date])
+
+
+Tools Used
+- Microsoft Power BI
+- DAX (Data Analysis Expressions)
+
+Purpose
+These DAX formulas are used to calculate minimum, maximum, and total sales values and create a date table with quarter, month name, and month number for dashboard analysis.
